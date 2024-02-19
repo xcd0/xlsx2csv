@@ -1,7 +1,6 @@
 BIN           := ./xlsx2csv.exe
-VERSION       := 0.0.0
 REVISION      := `git rev-parse --short HEAD`
-FLAG :=  -a -tags netgo -trimpath -ldflags='-X main.version=$(VERSION) -X main.revision='$(REVISION)' -s -w -extldflags="-static" -buildid='
+FLAG          :=  -a -tags netgo -trimpath -ldflags='-s -w -extldflags="-static" -buildid='
 
 all:
 	cat ./makefile
