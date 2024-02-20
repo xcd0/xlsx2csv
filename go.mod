@@ -1,4 +1,4 @@
-module xlsx2csv
+module github.com/xcd0/xlsx2csv
 
 go 1.22.0
 
