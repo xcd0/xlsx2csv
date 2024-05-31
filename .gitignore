@@ -1,6 +1,7 @@
-*.xlsx
-*.csv
-*.txt
-xlsx2csv
-xlsx2csv.exe
-
+/.git/
+/code/
+/*.xlsx
+/*.csv
+/*.txt
+/xlsx2csv
+/xlsx2csv.exe

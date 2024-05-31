@@ -1,31 +1,21 @@
 BIN           := ./xlsx2csv.exe
 REVISION      := `git rev-parse --short HEAD`
 FLAG          :=  -a -tags netgo -trimpath -ldflags='-s -w -extldflags="-static" -buildid='
-
 all:
 	cat ./makefile
-
 build:
-	rm -rf ./files
-	make generate
-	make fmt
+	make clean
 	go build
-
 release:
-	rm -rf ./files
-	make generate
-	make fmt
+	make clean
 	go build $(FLAG)
 	make upx 
 	@echo Success!
-
-fmt:
-	goimports -w *.go
-	gofmt -w *.go
-
-generate:
-	go generate
-
 upx:
 	upx --lzma $(BIN)
+clean:
+	rm -rf *.csv embedded_files.go
+	go generate
+	goimports -w *.go
+	gofmt -w *.go
 
